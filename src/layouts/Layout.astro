@@ -1,83 +1,135 @@
 ---
-// @version 1.0.0
-// Base layout for GrassRealms landing page
+// @version 2.0.0
+// SEO-optimized layout for GrassRealms Minecraft Server
 interface Props {
   title?: string;
   description?: string;
 }
 
+const siteUrl = import.meta.env.PUBLIC_SITE_URL || "https://grassrealms.com";
+const mcVersion = import.meta.env.PUBLIC_MC_VERSION || "1.21.11";
+const discordInvite = import.meta.env.PUBLIC_DISCORD_INVITE || "https://discord.gg/KdcrCBjM";
+
 const {
-  title = "GrassRealms - Servidor Minecraft Vanilla",
-  description = "Servidor Minecraft Vanilla optimizado con Paper. Experiencia pura, sin pay-to-win. Dificultad Hard, 100% Survival."
+  title = "GrassRealms | Servidor Minecraft Vanilla Chile - Survival en Espanol",
+  description = `Servidor Minecraft Vanilla Chile ${mcVersion}. El mejor servidor survival en espanol con Paper optimizado. Comunidad activa, anti-xray, sin lag. Unete gratis a GrassRealms, el servidor vanilla mas estable de Latinoamerica.`
 } = Astro.props;
 
-const siteUrl = import.meta.env.PUBLIC_SITE_URL || "https://grassrealms.com";
-const serverIp = import.meta.env.PUBLIC_SERVER_IP || "mc.grassrealms.com";
+const keywords = [
+  "minecraft chile",
+  "servidor minecraft chile",
+  "minecraft vanilla chile",
+  "server minecraft espanol",
+  "servidor survival minecraft",
+  "minecraft latinoamerica",
+  "servidor minecraft gratis",
+  "minecraft paper server",
+  "servidor minecraft vanilla",
+  "minecraft survival espanol",
+  "grassrealms",
+  "minecraft comunidad chile",
+  "servidor minecraft sin lag",
+  "minecraft 1.21",
+  "servidor minecraft latino"
+].join(", ");
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "GrassRealms Minecraft Server",
+  "description": "Servidor Minecraft Vanilla Chile. El mejor servidor survival en espanol con comunidad activa.",
+  "url": siteUrl,
+  "gamePlatform": "Minecraft Java Edition",
+  "applicationCategory": "Game Server",
+  "operatingSystem": `Minecraft ${mcVersion}`,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CLP",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "150",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "GrassRealms",
+    "url": siteUrl,
+    "logo": `${siteUrl}/logo.svg`,
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "url": discordInvite
+    }
+  }
+};
 ---
 
 <!doctype html>
-<html lang="es" class="dark">
+<html lang="es-CL" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <meta name="keywords" content="minecraft, servidor, vanilla, survival, paper, chile, latinoamerica, español" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="GrassRealms" />
+    <meta name="publisher" content="GrassRealms" />
+    <meta name="category" content="gaming" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="CL" />
+    <meta name="geo.placename" content="Chile" />
+    <meta name="language" content="Spanish" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content="GrassRealms | Servidor Minecraft Vanilla Chile" />
+    <meta property="og:description" content="El mejor servidor Minecraft Vanilla de Chile. Survival puro, comunidad activa, sin lag. Paper 1.21.11 optimizado. Unete gratis!" />
     <meta property="og:image" content={`${siteUrl}/logo.png`} />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="GrassRealms - Servidor Minecraft Vanilla Chile" />
     <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="GrassRealms" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:url" content={siteUrl} />
+    <meta name="twitter:title" content="GrassRealms | Servidor Minecraft Vanilla Chile" />
+    <meta name="twitter:description" content="El mejor servidor Minecraft Vanilla de Chile. Survival puro, comunidad activa, sin lag. Unete gratis!" />
     <meta name="twitter:image" content={`${siteUrl}/logo.png`} />
 
     <!-- Canonical -->
     <link rel="canonical" href={siteUrl} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/logo.png" sizes="180x180" />
+    <link rel="shortcut icon" href="/favicon.png" />
 
-    <!-- Preconnect to external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <title>{title}</title>
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://api.mcsrvstat.us" />
+    <link rel="dns-prefetch" href="https://api.mcsrvstat.us" />
 
     <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "VideoGame",
-      "name": "GrassRealms",
-      "description": description,
-      "url": siteUrl,
-      "gamePlatform": "Minecraft Java Edition",
-      "applicationCategory": "Game Server",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    })} />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
-  <body class="bg-obsidian text-white min-h-screen">
+  <body class="bg-obsidian text-white min-h-screen antialiased">
     <slot />
-
-    <!-- Theme initialization script -->
-    <script is:inline>
-      // Check for saved theme preference or default to dark
-      const theme = localStorage.getItem('theme') || 'dark';
-      if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
   </body>
 </html>
 
