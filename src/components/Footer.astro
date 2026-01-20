@@ -1,80 +1,25 @@
 ---
-// @version 1.0.0
-// Footer component with links and copyright
-const discordInvite = import.meta.env.PUBLIC_DISCORD_INVITE || "https://discord.gg/KdcrCBjM";
+// @version 2.0.0
+// Minimalist footer
 const currentYear = new Date().getFullYear();
-
-const serverLinks = [
-  { label: "Reglas", href: "#" },
-  { label: "Caracteristicas", href: "#features" },
-  { label: "El Servidor", href: "#server" }
-];
-
-const communityLinks = [
-  { label: "Discord", href: discordInvite, external: true },
-  { label: "Comunidad", href: "#community" },
-  { label: "Unirse", href: "#hero" }
-];
+const discordInvite = import.meta.env.PUBLIC_DISCORD_INVITE || "https://discord.gg/KdcrCBjM";
 ---
 
-<footer class="bg-obsidian border-t border-cobblestone">
-  <div class="max-w-7xl mx-auto px-4 py-12">
-    <div class="grid md:grid-cols-4 gap-8">
+<footer class="py-8 bg-stone/50 border-t border-white/5">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
       <!-- Brand -->
-      <div class="md:col-span-2">
-        <div class="flex items-center gap-3 mb-4">
-          <img src="/logo.svg" alt="GrassRealms" class="w-10 h-10" />
-          <span class="font-minecraft text-lg bg-gradient-to-r from-emerald-glow to-diamond-blue bg-clip-text text-transparent">
-            GrassRealms
-          </span>
-        </div>
-        <p class="text-gray-400 text-sm max-w-md">
-          Servidor Minecraft Vanilla optimizado con Paper. Experiencia pura, dificultad hard, sin pay-to-win.
-        </p>
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded bg-gradient-to-br from-emerald-glow to-emerald-600"></div>
+        <span class="text-sm text-gray-400">GrassRealms</span>
       </div>
 
-      <!-- Server Links -->
-      <div>
-        <h4 class="font-semibold text-white mb-4">Servidor</h4>
-        <ul class="space-y-2">
-          {serverLinks.map((link) => (
-            <li>
-              <a href={link.href} class="text-gray-400 hover:text-emerald-glow transition-colors text-sm">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <!-- Links -->
+      <div class="flex items-center gap-6 text-sm text-gray-500">
+        <a href={discordInvite} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Discord</a>
+        <span class="text-gray-700">|</span>
+        <span>&copy; {currentYear}</span>
       </div>
-
-      <!-- Community Links -->
-      <div>
-        <h4 class="font-semibold text-white mb-4">Comunidad</h4>
-        <ul class="space-y-2">
-          {communityLinks.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                target={link.external ? "_blank" : undefined}
-                rel={link.external ? "noopener noreferrer" : undefined}
-                class="text-gray-400 hover:text-emerald-glow transition-colors text-sm"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-
-    <!-- Bottom bar -->
-    <div class="mt-12 pt-8 border-t border-cobblestone flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-gray-500">
-        &copy; {currentYear} GrassRealms. Todos los derechos reservados.
-      </p>
-      <p class="text-sm text-gray-500 flex items-center gap-1">
-        Hecho con <span class="text-nether-red animate-heartbeat inline-block">&#10084;</span> en Chile
-      </p>
     </div>
   </div>
 </footer>
