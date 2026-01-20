@@ -6,14 +6,23 @@
 
 /* Custom theme variables */
 @theme {
-  /* Brand colors - Minecraft inspired */
-  --color-emerald-glow: #50fa7b;
-  --color-diamond-blue: #00d4ff;
+  /* Brand colors - Cherry Blossom inspired */
+  --color-cherry-pink: #FFB7C5;
+  --color-cherry-deep: #FF69B4;
+  --color-cherry-light: #FFF0F5;
+  --color-cherry-petal: #FFDBEA;
+  --color-sakura: #FFB7C5;
+  --color-wood-brown: #8B6914;
+  --color-leaf-green: #90EE90;
+  --color-obsidian: #0d0d0d;
+  --color-stone: #151515;
+  --color-cobblestone: #1f1f1f;
+
+  /* Legacy colors for compatibility */
+  --color-emerald-glow: #FFB7C5;
+  --color-diamond-blue: #FF69B4;
   --color-nether-red: #ff5555;
-  --color-gold-yellow: #f1fa8c;
-  --color-obsidian: #0d1117;
-  --color-stone: #1a1d23;
-  --color-cobblestone: #2d333b;
+  --color-gold-yellow: #FFD700;
 
   /* Fonts */
   --font-minecraft: 'Minecraft', 'Press Start 2P', monospace;

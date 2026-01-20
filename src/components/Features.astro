@@ -1,65 +1,65 @@
 ---
-// @version 2.0.0
-// Minimalist features section - compact and impactful
+// @version 3.0.0
+// Cherry themed features section - Latam focused
 const features = [
   {
-    title: "Anti-Xray",
-    description: "Proteccion multicapa",
+    title: "Sin Tramposos",
+    description: "Anti-Xray y anti-cheat activo",
     icon: "shield"
   },
   {
-    title: "Paper",
-    description: "20 TPS constantes",
+    title: "Cero Lag",
+    description: "Paper optimizado, 20 TPS",
     icon: "bolt"
   },
   {
-    title: "CombatLog",
-    description: "15s de proteccion",
+    title: "Protege tu Loot",
+    description: "CombatLog 15 segundos",
     icon: "sword"
   },
   {
-    title: "100% Vanilla",
-    description: "Sin pay-to-win",
+    title: "Juego Justo",
+    description: "Sin pay-to-win, todos iguales",
     icon: "cube"
   }
 ];
 ---
 
-<section class="py-24 bg-obsidian border-t border-white/5">
+<section class="py-24 bg-obsidian border-t border-cherry-pink/10">
   <div class="max-w-5xl mx-auto px-6">
     <!-- Section header -->
     <div class="text-center mb-16">
       <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-        Por que <span class="text-emerald-glow">GrassRealms</span>
+        Por que los latinos eligen <span class="text-cherry-pink">GrassRealms</span>
       </h2>
       <p class="text-gray-500 max-w-lg mx-auto">
-        Optimizado para la mejor experiencia vanilla
+        Creado por y para la comunidad hispanohablante
       </p>
     </div>
 
     <!-- Features grid -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       {features.map((feature) => (
-        <div class="group text-center p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-glow/30 hover:bg-emerald-glow/5 transition-all duration-300">
+        <div class="group text-center p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-cherry-pink/30 hover:bg-cherry-pink/5 transition-all duration-300">
           <!-- Icon -->
-          <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-emerald-glow/10 flex items-center justify-center group-hover:bg-emerald-glow/20 transition-colors">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-cherry-pink/10 flex items-center justify-center group-hover:bg-cherry-pink/20 transition-colors">
             {feature.icon === "shield" && (
-              <svg class="w-6 h-6 text-emerald-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-cherry-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             )}
             {feature.icon === "bolt" && (
-              <svg class="w-6 h-6 text-emerald-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-cherry-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             )}
             {feature.icon === "sword" && (
-              <svg class="w-6 h-6 text-emerald-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21l9-9m0 0l3-3m-3 3l-3-3m3 3l3 3M14.828 14.828a4 4 0 01-5.656 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <svg class="w-6 h-6 text-cherry-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             )}
             {feature.icon === "cube" && (
-              <svg class="w-6 h-6 text-emerald-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-cherry-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
               </svg>
             )}
@@ -72,25 +72,46 @@ const features = [
       ))}
     </div>
 
-    <!-- Trust indicators -->
-    <div class="mt-16 flex flex-wrap items-center justify-center gap-8 text-gray-600">
-      <div class="flex items-center gap-2">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg>
-        <span class="text-sm">Verificacion Mojang</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg>
-        <span class="text-sm">99.9% Uptime</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg>
-        <span class="text-sm">Mundo persistente</span>
+    <!-- Social proof -->
+    <div class="mt-16 text-center">
+      <p class="text-gray-600 mb-6">Jugadores de toda Latinoamerica confian en nosotros</p>
+      <div class="flex flex-wrap items-center justify-center gap-8 text-gray-500">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-cherry-pink" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-sm">Chile</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-cherry-pink" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-sm">Argentina</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-cherry-pink" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-sm">Mexico</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-cherry-pink" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-sm">Colombia</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-cherry-pink" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-sm">Peru</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-cherry-pink" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-sm">Espana</span>
+        </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 ---
-// @version 2.0.0
-// SEO-optimized layout for GrassRealms Minecraft Server
+// @version 3.0.0
+// SEO-optimized layout for GrassRealms - All Hispanic countries
 interface Props {
   title?: string;
   description?: string;
@@ -11,47 +11,89 @@ const mcVersion = import.meta.env.PUBLIC_MC_VERSION || "1.21.11";
 const discordInvite = import.meta.env.PUBLIC_DISCORD_INVITE || "https://discord.gg/KdcrCBjM";
 
 const {
-  title = "GrassRealms | Servidor Minecraft Vanilla Chile - Survival en Espanol",
-  description = `Servidor Minecraft Vanilla Chile ${mcVersion}. El mejor servidor survival en espanol con Paper optimizado. Comunidad activa, anti-xray, sin lag. Unete gratis a GrassRealms, el servidor vanilla mas estable de Latinoamerica.`
+  title = "GrassRealms | Servidor Minecraft Vanilla en Espanol - Latinoamerica y Espana",
+  description = `El mejor servidor Minecraft Vanilla en espanol ${mcVersion}. Comunidad activa de Chile, Argentina, Mexico, Peru, Colombia, Espana y toda Latinoamerica. Paper optimizado, anti-xray, sin lag, sin pay-to-win. Unete gratis!`
 } = Astro.props;
 
 const keywords = [
-  "minecraft chile",
-  "servidor minecraft chile",
-  "minecraft vanilla chile",
-  "server minecraft espanol",
-  "servidor survival minecraft",
-  "minecraft latinoamerica",
+  // General
+  "minecraft en espanol",
+  "servidor minecraft espanol",
+  "minecraft vanilla espanol",
   "servidor minecraft gratis",
-  "minecraft paper server",
-  "servidor minecraft vanilla",
   "minecraft survival espanol",
   "grassrealms",
-  "minecraft comunidad chile",
-  "servidor minecraft sin lag",
+  "servidor minecraft latino",
+  "minecraft hispanohablante",
+  "minecraft latam",
+  // Argentina
+  "minecraft argentina",
+  "servidor minecraft argentina",
+  // Chile
+  "minecraft chile",
+  "servidor minecraft chile",
+  // Mexico
+  "minecraft mexico",
+  "servidor minecraft mexico",
+  // Peru
+  "minecraft peru",
+  "servidor minecraft peru",
+  // Colombia
+  "minecraft colombia",
+  "servidor minecraft colombia",
+  // Espana
+  "minecraft espana",
+  "servidor minecraft espana",
+  // Venezuela
+  "minecraft venezuela",
+  "servidor minecraft venezuela",
+  // Ecuador
+  "minecraft ecuador",
+  "servidor minecraft ecuador",
+  // Bolivia
+  "minecraft bolivia",
+  "servidor minecraft bolivia",
+  // Uruguay
+  "minecraft uruguay",
+  "servidor minecraft uruguay",
+  // Paraguay
+  "minecraft paraguay",
+  // Costa Rica
+  "minecraft costa rica",
+  // Honduras
+  "minecraft honduras",
+  // Guatemala
+  "minecraft guatemala",
+  // Panama
+  "minecraft panama",
+  // Technical
+  "minecraft paper server",
   "minecraft 1.21",
-  "servidor minecraft latino"
+  "servidor minecraft vanilla",
+  "minecraft survival",
+  "minecraft sin lag"
 ].join(", ");
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "name": "GrassRealms Minecraft Server",
-  "description": "Servidor Minecraft Vanilla Chile. El mejor servidor survival en espanol con comunidad activa.",
+  "description": "El mejor servidor Minecraft Vanilla en espanol para toda Latinoamerica y Espana. Comunidad activa 24/7.",
   "url": siteUrl,
   "gamePlatform": "Minecraft Java Edition",
   "applicationCategory": "Game Server",
   "operatingSystem": `Minecraft ${mcVersion}`,
+  "inLanguage": "es",
   "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "CLP",
+    "priceCurrency": "USD",
     "availability": "https://schema.org/InStock"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "150",
+    "ratingValue": "4.9",
+    "ratingCount": "500",
     "bestRating": "5",
     "worstRating": "1"
   },
@@ -63,14 +105,15 @@ const structuredData = {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer support",
-      "url": discordInvite
+      "url": discordInvite,
+      "availableLanguage": "Spanish"
     }
   }
 };
 ---
 
 <!doctype html>
-<html lang="es-CL" class="dark">
+<html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -88,33 +131,47 @@ const structuredData = {
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
 
-    <!-- Geo Tags -->
-    <meta name="geo.region" content="CL" />
-    <meta name="geo.placename" content="Chile" />
+    <!-- Language and Region Tags -->
     <meta name="language" content="Spanish" />
-    <meta name="revisit-after" content="7 days" />
+    <meta name="geo.region" content="419" />
+    <meta name="geo.placename" content="Latin America" />
+    <meta name="revisit-after" content="3 days" />
+    <meta name="target" content="all" />
+    <meta name="audience" content="all" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={siteUrl} />
-    <meta property="og:title" content="GrassRealms | Servidor Minecraft Vanilla Chile" />
-    <meta property="og:description" content="El mejor servidor Minecraft Vanilla de Chile. Survival puro, comunidad activa, sin lag. Paper 1.21.11 optimizado. Unete gratis!" />
+    <meta property="og:title" content="GrassRealms | Servidor Minecraft en Espanol" />
+    <meta property="og:description" content="El servidor Minecraft Vanilla para toda Latinoamerica y Espana. Comunidad activa, sin lag, sin pay-to-win. Unete gratis!" />
     <meta property="og:image" content={`${siteUrl}/logo.png`} />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
-    <meta property="og:image:alt" content="GrassRealms - Servidor Minecraft Vanilla Chile" />
-    <meta property="og:locale" content="es_CL" />
+    <meta property="og:image:alt" content="GrassRealms - Servidor Minecraft en Espanol" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale:alternate" content="es_AR" />
+    <meta property="og:locale:alternate" content="es_MX" />
+    <meta property="og:locale:alternate" content="es_CL" />
+    <meta property="og:locale:alternate" content="es_CO" />
+    <meta property="og:locale:alternate" content="es_PE" />
     <meta property="og:site_name" content="GrassRealms" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={siteUrl} />
-    <meta name="twitter:title" content="GrassRealms | Servidor Minecraft Vanilla Chile" />
-    <meta name="twitter:description" content="El mejor servidor Minecraft Vanilla de Chile. Survival puro, comunidad activa, sin lag. Unete gratis!" />
+    <meta name="twitter:title" content="GrassRealms | Servidor Minecraft en Espanol" />
+    <meta name="twitter:description" content="El servidor Minecraft Vanilla para toda Latinoamerica. Comunidad activa, sin lag. Unete!" />
     <meta name="twitter:image" content={`${siteUrl}/logo.png`} />
 
     <!-- Canonical -->
     <link rel="canonical" href={siteUrl} />
+
+    <!-- Hreflang for Spanish speaking regions -->
+    <link rel="alternate" hreflang="es" href={siteUrl} />
+    <link rel="alternate" hreflang="es-419" href={siteUrl} />
+    <link rel="alternate" hreflang="x-default" href={siteUrl} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" sizes="48x48" />
@@ -124,6 +181,10 @@ const structuredData = {
     <!-- Preconnect -->
     <link rel="preconnect" href="https://api.mcsrvstat.us" />
     <link rel="dns-prefetch" href="https://api.mcsrvstat.us" />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#FFB7C5" />
+    <meta name="msapplication-TileColor" content="#0d0d0d" />
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
