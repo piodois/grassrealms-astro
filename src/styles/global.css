@@ -1,0 +1,161 @@
+/* @version 1.0.0 */
+@import "tailwindcss";
+
+/* Custom dark mode variant for manual toggle */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Custom theme variables */
+@theme {
+  /* Brand colors - Minecraft inspired */
+  --color-emerald-glow: #50fa7b;
+  --color-diamond-blue: #00d4ff;
+  --color-nether-red: #ff5555;
+  --color-gold-yellow: #f1fa8c;
+  --color-obsidian: #0d1117;
+  --color-stone: #1a1d23;
+  --color-cobblestone: #2d333b;
+
+  /* Fonts */
+  --font-minecraft: 'Minecraft', 'Press Start 2P', monospace;
+  --font-body: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+/* Minecraft font class for titles */
+.font-minecraft {
+  font-family: var(--font-minecraft);
+  letter-spacing: 0.05em;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Pixel art rendering for crisp edges */
+.pixel-perfect {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(80, 250, 123, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(80, 250, 123, 0.8); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.1); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  70% { transform: scale(1); }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 20s linear infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* 3D Cube rotation animation */
+@keyframes rotate-cube {
+  0% { transform: rotateX(-20deg) rotateY(0deg); }
+  100% { transform: rotateX(-20deg) rotateY(360deg); }
+}
+
+.animate-rotate-cube {
+  animation: rotate-cube 12s linear infinite;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Active nav link glow effect */
+.nav-link-active {
+  color: var(--color-emerald-glow) !important;
+  text-shadow: 0 0 10px rgba(80, 250, 123, 0.6), 0 0 20px rgba(80, 250, 123, 0.4);
+  position: relative;
+}
+
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-emerald-glow), var(--color-diamond-blue));
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(80, 250, 123, 0.6);
+}
+
+/* Bounce animation for scroll indicator */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Copy feedback animation */
+@keyframes copy-success {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.copy-success {
+  animation: copy-success 0.3s ease-out;
+}

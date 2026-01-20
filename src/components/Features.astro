@@ -1,0 +1,112 @@
+---
+// @version 1.0.0
+// Features section highlighting server capabilities
+const features = [
+  {
+    title: "Anti-Xray Engine",
+    description: "Sistema engine-mode 2 configurado por dimension. Overworld, Nether y The End con proteccion especializada contra x-ray.",
+    icon: "shield",
+    gradient: "from-cyan-500 to-blue-600"
+  },
+  {
+    title: "Paper Optimizado",
+    description: "47+ optimizaciones aplicadas. MSPT objetivo menor a 50ms con 20 TPS constantes incluso con carga maxima.",
+    icon: "server",
+    gradient: "from-emerald-500 to-green-600"
+  },
+  {
+    title: "CombatLogX",
+    description: "Sistema anti combat-log de 15 segundos. Proteccion de loot, efectos de dano y muerte. Sin escapar de combates.",
+    icon: "sword",
+    gradient: "from-red-500 to-orange-600"
+  },
+  {
+    title: "100% Vanilla",
+    description: "Experiencia vanilla pura. Sin plugins pay-to-win. Solo optimizaciones de rendimiento que no afectan el gameplay.",
+    icon: "grass",
+    gradient: "from-purple-500 to-pink-600"
+  },
+  {
+    title: "BlockLocker",
+    description: "Protege tus cofres, puertas y contenedores con signos. Sistema simple y efectivo sin comandos complicados.",
+    icon: "lock",
+    gradient: "from-indigo-500 to-violet-600"
+  },
+  {
+    title: "Spark Profiler",
+    description: "Monitoreo de rendimiento en tiempo real. TPS, memoria y CPU siempre optimizados para la mejor experiencia.",
+    icon: "lightning",
+    gradient: "from-yellow-500 to-amber-600"
+  }
+];
+---
+
+<section id="features" class="snap-section py-20 bg-obsidian">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="font-minecraft text-3xl sm:text-4xl mb-4">
+        <span class="bg-gradient-to-r from-emerald-glow to-diamond-blue bg-clip-text text-transparent">
+          Caracteristicas Tecnicas
+        </span>
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Servidor optimizado para ofrecer la mejor experiencia vanilla con tecnologia de punta
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((feature) => (
+        <div class="group relative p-6 bg-stone rounded-2xl border border-cobblestone hover:border-emerald-glow/50 transition-all duration-300 hover:-translate-y-1">
+          <!-- Icon -->
+          <div class={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-4`}>
+            {feature.icon === "shield" && (
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            )}
+            {feature.icon === "server" && (
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+              </svg>
+            )}
+            {feature.icon === "sword" && (
+              <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.92 5H5L14 14l-1.5 1.5 1.42 1.42L15.5 15.42 17 16.92V19h2l1-1v-3l-9-9z"/>
+                <path d="M19 3h-2l-1 1v2l-3 3 2 2 3-3h2l1-1V4l-1-1zM5.41 20L4 18.59 18.59 4 20 5.41 5.41 20z"/>
+              </svg>
+            )}
+            {feature.icon === "grass" && (
+              <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="2" y="2" width="20" height="8" fill="#5D8C3B"/>
+                <rect x="2" y="10" width="20" height="12" fill="#8B5A2B"/>
+              </svg>
+            )}
+            {feature.icon === "lock" && (
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            )}
+            {feature.icon === "lightning" && (
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            )}
+          </div>
+
+          <!-- Content -->
+          <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-emerald-glow transition-colors">
+            {feature.title}
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            {feature.description}
+          </p>
+
+          <!-- Hover glow effect -->
+          <div class={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity -z-10`}></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,115 @@
+---
+// @version 1.0.0
+// Call to action section with server join instructions
+const serverIp = import.meta.env.PUBLIC_SERVER_IP || "mc.grassrealms.com";
+const mcVersion = import.meta.env.PUBLIC_MC_VERSION || "1.21.4";
+
+const steps = [
+  {
+    number: 1,
+    title: `Abre Minecraft Java Edition ${mcVersion}`,
+    description: "Asegurate de tener la version correcta instalada"
+  },
+  {
+    number: 2,
+    title: "Ve a Multijugador y agrega el servidor",
+    description: "Copia la IP y pegala en la direccion del servidor"
+  },
+  {
+    number: 3,
+    title: "Conectate y comienza tu aventura",
+    description: "El servidor es premium, necesitas cuenta de Mojang"
+  }
+];
+---
+
+<section class="snap-section py-20 relative overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/background-swamp.svg"
+      alt=""
+      class="w-full h-full object-cover opacity-10"
+    />
+  </div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+    <!-- 3D Cube -->
+    <div class="flex justify-center mb-8">
+      <div class="w-20 h-20 relative animate-float">
+        <div class="w-full h-full rounded-xl bg-gradient-to-br from-emerald-glow to-diamond-blue animate-pulse-glow"></div>
+      </div>
+    </div>
+
+    <!-- Heading -->
+    <h2 class="font-minecraft text-3xl sm:text-4xl mb-4">
+      <span class="bg-gradient-to-r from-emerald-glow to-diamond-blue bg-clip-text text-transparent">
+        Listo para la Aventura?
+      </span>
+    </h2>
+    <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+      Experiencia vanilla pura en dificultad hard. Construye, explora y sobrevive en un mundo persistente.
+    </p>
+
+    <!-- Server IP Box -->
+    <div class="inline-block mb-12">
+      <button
+        id="cta-copy-btn"
+        class="group flex items-center gap-4 px-8 py-4 bg-stone rounded-2xl border-2 border-emerald-glow/50 hover:border-emerald-glow transition-all"
+      >
+        <span class="font-mono text-2xl text-emerald-glow">{serverIp}</span>
+        <div class="w-10 h-10 rounded-xl bg-emerald-glow/20 flex items-center justify-center group-hover:bg-emerald-glow/30 transition-colors">
+          <svg id="cta-copy-icon" class="w-5 h-5 text-emerald-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+          <svg id="cta-check-icon" class="w-5 h-5 text-emerald-glow hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+      </button>
+      <p id="cta-feedback" class="text-sm text-emerald-glow mt-2 opacity-0 transition-opacity">IP copiada al portapapeles!</p>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      {steps.map((step) => (
+        <div class="relative">
+          <div class="w-10 h-10 mx-auto mb-4 rounded-full bg-emerald-glow/20 text-emerald-glow font-bold flex items-center justify-center">
+            {step.number}
+          </div>
+          <h4 class="font-semibold text-white mb-2">{step.title}</h4>
+          <p class="text-sm text-gray-400">{step.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Version info -->
+    <p class="text-sm text-gray-500">
+      Minecraft Java Edition {mcVersion} - Paper Server
+    </p>
+  </div>
+</section>
+
+<script define:vars={{ serverIp }}>
+  const copyBtn = document.getElementById('cta-copy-btn');
+  const copyIcon = document.getElementById('cta-copy-icon');
+  const checkIcon = document.getElementById('cta-check-icon');
+  const feedback = document.getElementById('cta-feedback');
+
+  copyBtn?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(serverIp);
+      copyIcon?.classList.add('hidden');
+      checkIcon?.classList.remove('hidden');
+      feedback?.classList.remove('opacity-0');
+
+      setTimeout(() => {
+        copyIcon?.classList.remove('hidden');
+        checkIcon?.classList.add('hidden');
+        feedback?.classList.add('opacity-0');
+      }, 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  });
+</script>
